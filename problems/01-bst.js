@@ -48,7 +48,16 @@ class BST {
 
     // Perform an iterative search through the binary search tree
     searchIter(val) {
-        // Your code here
+        if (!this.root) return false;
+        let current = this.root;
+        while (current !== null) {
+            if (val < current.val) {
+                current = current.left;
+            } else if (val > current.val) {
+                current = current.right;
+            } else return true;
+        }
+        return false;
     }
 }
 
